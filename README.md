@@ -54,6 +54,8 @@ El panel de administración ofrece a los administradores las siguientes funcione
 ![image](https://github.com/user-attachments/assets/96fe2b6d-63a9-4b8b-9670-df5aed1e921d)
 ![image](https://github.com/user-attachments/assets/e26787cb-e850-492a-8d1a-dac71d38e89a)
 
+Video del funcionamiento
+https://youtu.be/a5JQS8TlMRs
 
 ---
 
