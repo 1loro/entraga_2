@@ -2,6 +2,10 @@
 
 **App TeLlevo** es una plataforma de gestión de viajes desarrollada con **Django Rest Framework** para el backend y **Ionic** para el frontend, que facilita la conexión entre conductores y usuarios. Con esta app, los conductores pueden gestionar sus viajes y los administradores tienen control sobre los usuarios y los viajes dentro del sistema.
 
+
+[![Ver video en YouTube](https://img.youtube.com/vi/a5JQS8TlMRs/0.jpg)](https://www.youtube.com/watch?v=a5JQS8TlMRs)
+
+
 ## ✨ Características Principales
 
 ### 1. 🚶‍♂️ **Registro de Usuarios**
@@ -54,8 +58,6 @@ El panel de administración ofrece a los administradores las siguientes funcione
 ![image](https://github.com/user-attachments/assets/96fe2b6d-63a9-4b8b-9670-df5aed1e921d)
 ![image](https://github.com/user-attachments/assets/e26787cb-e850-492a-8d1a-dac71d38e89a)
 
-Video del funcionamiento
-[![Ver video en YouTube](https://img.youtube.com/vi/a5JQS8TlMRs/0.jpg)](https://www.youtube.com/watch?v=a5JQS8TlMRs)
 
 ---
 
