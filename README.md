@@ -57,8 +57,10 @@ El panel de administración ofrece a los administradores las siguientes funcione
 ## 📷 Imágenes del Proyecto
 
 ![image](https://github.com/user-attachments/assets/62b60e83-bff9-490b-9199-df964915c852)
-![image](https://github.com/user-attachments/assets/4765c3b5-dc23-4e54-bcfc-267f73fc5887)
-![image](https://github.com/user-attachments/assets/96fe2b6d-63a9-4b8b-9670-df5aed1e921d)
+![image](https://github.com/user-attachments/assets/accf97fe-0fc9-4143-ab15-496451708826)
+![image](https://github.com/user-attachments/assets/31ee1b4c-a49a-4f0c-8adf-f7bab7eb204d)
+![image](https://github.com/user-attachments/assets/84a3dfca-f729-4c5e-800f-15f03e6c1f83)
+![image](https://github.com/user-attachments/assets/8ac97661-a23d-4711-9629-1164ec2471ec)
 ![image](https://github.com/user-attachments/assets/e26787cb-e850-492a-8d1a-dac71d38e89a)
 
 
