@@ -45,7 +45,6 @@ El panel de administración ofrece a los administradores las siguientes funcione
 1. Los administradores acceden a un panel de control para:
    - **Gestionar usuarios**: Crear, actualizar y eliminar usuarios.
    - **Borrar viajes**: Supervisar y eliminar los viajes creados por los conductores si es necesario.  
-[**insertar imagen**: Vista del panel de control con ejemplos de las funciones disponibles]
 
 ---
 
