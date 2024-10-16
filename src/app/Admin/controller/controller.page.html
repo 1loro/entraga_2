@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Gestión de Usuarios</ion-title>
+    <ion-back-button fill="clear" slot="start" style="color: #6A4F9A">
+    </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+  <div class="home-container"> 
+    <ion-img src="assets/img/1.gif" class="logo"></ion-img>
+    <h2 class="welcome-text">Gestión de Usuarios</h2>
+    <ion-list>
+      
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col style="text-align: left;"><strong>ID</strong></ion-col> 
+          <ion-col style="text-align: left;"><strong>Nombre</strong></ion-col> 
+          <ion-col ><strong>Administrar</strong></ion-col>
+        </ion-row>
+        <ng-container *ngFor="let user of users">
+          <ion-row>
+            <ion-col style="display: flex; align-items: center;">{{user.id}}</ion-col>
+            <ion-col style="display: flex; align-items: center;">{{user.nombre}}</ion-col>
+            <ion-col style="display: flex; justify-content: center; align-items: center;">
+              <ion-button fill="clear" size="small" (click)="user.showDetails = !user.showDetails" style="display: flex; align-items: center; line-height: 1;"> 
+                <ion-icon name="settings" style="margin-right: 4px; line-height: 1;"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="user.showDetails">
+            <ion-col colspan="3">
+              <div style="text-align: left; border: 1px solid #6A4F9A; padding: 10px; border-radius: 8px;">
+                <strong>Correo:</strong> {{user.email}}<br>
+                <strong>Contraseña:</strong> {{user.password}}<br>
+              </div>
+              <ion-button fill="clear"  (click)="modificarUsuario(user.id)" > 
+                Editar 
+              </ion-button>
+              <ion-button fill="clear"  (click)="eliminarUsuario(user.id)" > 
+                Borrar 
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ng-container>
+        <ion-spinner *ngIf="users.length === 0"></ion-spinner>
+      </ion-grid>
+    </ion-list>
+  </div>
+</ion-content>

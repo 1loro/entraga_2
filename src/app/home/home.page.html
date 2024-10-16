@@ -1,0 +1,43 @@
+<ion-header>
+  <br>
+  <br>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <div class="home-container">
+    <ion-img src="assets/img/1.gif" class="logo"></ion-img>
+    <h2 class="welcome-text">Credenciales</h2>
+    
+    <div class="location-inputs">
+      <ion-item class="input-item">
+        <ion-input class="input-bordered" [(ngModel)]="user.username" 
+      placeholder="Ingrese su usuario"></ion-input>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-input class="input-bordered"  [(ngModel)]="user.password" type="password" 
+          placeholder="Ingrese su contraseña"></ion-input>
+      </ion-item>
+    </div>
+    <ion-text color="medium" class="forgot-password">
+      <p class="ion-text-center">
+        <a href="/contrasena">Olvide mi contraseña</a>
+      </p>
+      
+    </ion-text>
+    <div class="button-group">
+      <ion-button 
+    expand="block" 
+    (click)="validar()" 
+    class="action-button custom-button">
+    Ingresar
+  </ion-button>
+  
+      <ion-button expand="block" color="light" class="action-button" href="/register">
+        Registrarme
+      </ion-button>
+    </div>
+    
+    
+  </div>
+</ion-content>

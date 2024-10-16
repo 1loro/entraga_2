@@ -1,0 +1,74 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+// Estilo global para botones
+ion-button {
+  --color: #9473B5;  // Color del texto del botón
+  --background: transparent;  // Fondo transparente
+  --background-activated: rgba(148, 115, 181, 0.1);  // Color de fondo cuando se presiona
+  --background-focused: rgba(148, 115, 181, 0.2);  // Color de fondo cuando está enfocado
+  --background-hover: rgba(148, 115, 181, 0.1);  // Color de fondo al pasar el mouse
+
+  &.button-solid {
+    --background: #9473B5;
+    --color: white;
+    --background-activated: #8265a0;
+    --background-focused: #8265a0;
+    --background-hover: #9f81bc;
+  }
+}
+
+// Estilo para las alertas
+.alert-button-inner {
+  color: #9473B5 !important;  // Asegura que se aplique el color
+}
+
+// Para iOS, necesitamos un selector más específico
+.alert-button.ion-focusable.ion-activatable {
+  color: #9473B5 !important;
+}
+
+// Clase personalizada para botones que quieres que tengan el estilo completo
+.custom-button {
+  --background: #9473B5;
+  --color: white;
+  --border-color: #824dcc;
+  --background-hover: #5A2A9B;
+  --background-activated: #6A4F9A;
+  --background-focused: #6A4F9A;
+}

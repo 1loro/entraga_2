@@ -1,0 +1,53 @@
+<ion-menu side="end" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-footer>
+      
+    </ion-footer>
+  </ion-content>
+  <ion-button (click)="conductor()">Soy conductor</ion-button>
+  <ion-button (click)="pass()">Admin</ion-button>
+  <ion-button (click)="logout()">Logout</ion-button>
+</ion-menu>
+
+<ion-content id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Inicio</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="openMenu()" fill="clear">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <div class="home-container">
+      <ion-img src="assets/img/1.gif" class="logo"></ion-img>
+      <h2 class="welcome-text">Bienvenido {{username}}</h2>
+      <br>
+      
+      <div class="location-inputs">
+        <ion-item class="input-item">
+          <ion-input class="input-bordered"  
+            placeholder="Ubicación actual" [(ngModel)]="ubicacionActual"></ion-input> 
+        </ion-item>
+        <ion-item>
+          <ion-input class="input-bordered" placeholder="Ingrese destino" [(ngModel)]="destino"></ion-input> 
+        </ion-item>
+      </div>
+
+      <ion-button 
+        expand="block" 
+        (click)="buscarViajes()" 
+        class="action-button custom-button">
+      Buscar Viajes
+    </ion-button>
+    
+  </div>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>tarifas</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="openMenu()" fill="clear">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-menu side="end" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      
+
+    </ion-content>
+    <ion-button href="/viajes">Viajes</ion-button>
+      <ion-button (click)="pass()">Admin</ion-button>
+      <ion-button (click)="logout()">Logout</ion-button>
+      
+  </ion-menu>
+
+  <ion-list *ngIf="datosViaje.length > 0; else noData" id="main-content">
+    <ion-card *ngFor="let viaje of datosViaje" (click)="viaje.expandido = !viaje.expandido">
+      <ion-card-header>
+        <ion-card-subtitle>De: {{ viaje.comunaOrigen }} a: {{ viaje.comunaDestino }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>Valor por Kilómetro: {{ viaje.valorKilometro }}</p>
+        
+      </ion-card-content>
+      <ion-card-content *ngIf="viaje.expandido">
+        <p>Detalles adicionales del viaje... {{ viaje.Detalles }}</p>
+        <ion-button *ngIf="viaje.expandido" (click)="contratar(viaje)">Contratar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ng-template #noData>
+    <p>No hay datos disponibles.</p>
+  </ng-template>
+</ion-content>
