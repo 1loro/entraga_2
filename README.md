@@ -4,7 +4,8 @@
 
 
 [![Ver video en YouTube](https://img.youtube.com/vi/a5JQS8TlMRs/0.jpg)](https://www.youtube.com/watch?v=a5JQS8TlMRs)
-[Video del funcionamiento]([https://www.django-rest-framework.org/](https://www.youtube.com/watch?v=a5JQS8TlMRs))
+
+[Video del funcionamiento]([(https://www.youtube.com/watch?v=a5JQS8TlMRs)])
 
 ## ✨ Características Principales
 
