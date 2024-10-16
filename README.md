@@ -10,17 +10,20 @@
 
 ### 1. 🚶‍♂️ **Registro de Usuarios**
 Permite a nuevos usuarios crear una cuenta fácilmente a través de la interfaz de la aplicación.  
+
 ![image](https://github.com/user-attachments/assets/ce98644f-bc8c-4c19-bc6f-80c8b4879217)
 
 
 ### 2. 🚖 **Gestión de Viajes**
 Los conductores pueden crear y gestionar sus viajes, especificando detalles como las tarifas y los destinos.  
+
 ![image](https://github.com/user-attachments/assets/b9b8e4c9-afd3-441e-8df2-fdb5ab5fbc44)
 
 
 ### 3. 🛠️ **Panel de Administración**
 El panel de administración ofrece a los administradores las siguientes funciones:
 - Gestión de usuarios registrados.
+- 
 ![image](https://github.com/user-attachments/assets/b8e3ea56-9f8e-4c6a-94fc-bba18f60e651)
 
 
