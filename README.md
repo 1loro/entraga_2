@@ -17,7 +17,6 @@ Los conductores pueden crear y gestionar sus viajes, especificando detalles como
 ### 3. 🛠️ **Panel de Administración**
 El panel de administración ofrece a los administradores las siguientes funciones:
 - Gestión de usuarios registrados.
-- Capacidad para eliminar viajes creados por los conductores.  
 ![image](https://github.com/user-attachments/assets/b8e3ea56-9f8e-4c6a-94fc-bba18f60e651)
 
 
@@ -44,7 +43,7 @@ El panel de administración ofrece a los administradores las siguientes funcione
 ### 🛡️ **Administración**
 1. Los administradores acceden a un panel de control para:
    - **Gestionar usuarios**: Crear, actualizar y eliminar usuarios.
-   - **Borrar viajes**: Supervisar y eliminar los viajes creados por los conductores si es necesario.  
+
 
 ---
 
