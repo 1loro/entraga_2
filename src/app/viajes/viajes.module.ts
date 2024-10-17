@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ViajesPageRoutingModule } from './viajes-routing.module';
 
 import { ViajesPage } from './viajes.page';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ViajesPage } from './viajes.page';
     IonicModule,
     ViajesPageRoutingModule
   ],
-  declarations: [ViajesPage]
+  declarations: [ViajesPage],
+  providers: [Geolocation]
 })
 export class ViajesPageModule {}

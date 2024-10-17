@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; // Importar Router
+import { Router } from '@angular/router'; 
 import { AuthenticatorService } from '../Servicios/authenticator.service';
-import { AlertController } from '@ionic/angular'; // Importar AlertController
-import { ToastController } from '@ionic/angular'; // Importar ToastController
+import { AlertController } from '@ionic/angular'; 
+import { ToastController } from '@ionic/angular'; 
 import { DataService } from '../Servicios/data.services';
-import { ViajeService } from '../Servicios/viaje.service'; // Asegúrate de que la ruta sea correcta
+import { ViajeService } from '../Servicios/viaje.service'; 
 
 @Component({
   selector: 'app-conductor',
@@ -12,13 +12,13 @@ import { ViajeService } from '../Servicios/viaje.service'; // Asegúrate de que 
   styleUrls: ['./conductor.page.scss'],
 })
 export class ConductorPage implements OnInit {
-  private router: Router; // Declarar router
-  private alertController: AlertController; // Declarar alertController
-  private toastController: ToastController; // Declarar toastController
-  comunaOrigen: string = ''; // Inicializar con un valor por defecto
-  comunaDestino: string = ''; // Inicializar con un valor por defecto
-  valorKilometro: number = 0; // Inicializar con un valor por defecto
-  Detalles: string = ''; // Declarar la propiedad detalles
+  private router: Router; 
+  private alertController: AlertController; 
+  private toastController: ToastController; 
+  comunaOrigen: string = ''; 
+  comunaDestino: string = ''; 
+  valorKilometro: number = 0; 
+  Detalles: string = ''; 
 
   constructor(private auth: AuthenticatorService, router: Router, alertController: AlertController, toastController: ToastController, private dataService: DataService, private viajeService: ViajeService) { // Inyectar Router y AlertController en el constructor
     this.router = router; // Asignar router
@@ -27,13 +27,13 @@ export class ConductorPage implements OnInit {
   }
 
   ngOnInit() {
-    // Método ngOnInit requerido por la interfaz OnInit
+   
   }
 
   openMenu() {
     const menu = document.querySelector('ion-menu');
     if (menu) {
-      menu.open(); // Abre el menú
+      menu.open(); 
       console.log('Menú abierto');
     } else {
       console.error('no se encontró el menú');
@@ -99,15 +99,27 @@ export class ConductorPage implements OnInit {
 
   async guardarDatos() {
     console.log('Guardando datos...');
+
+    if (!this.comunaOrigen || !this.comunaDestino || this.valorKilometro <= 0) {
+        this.presentToast('Complete los campos de Comuna'); 
+        return; 
+    }
+
     const datos = {
-      comunaOrigen: this.comunaOrigen,
-      comunaDestino: this.comunaDestino,
-      valorKilometro: this.valorKilometro,
-      detalles: this.Detalles,
-      Text: 'Viaje disponible' // Cambia esto según tus datos
+        comunaOrigen: this.comunaOrigen,
+        comunaDestino: this.comunaDestino,
+        valorKilometro: this.valorKilometro,
+        detalles: this.Detalles,
+        Text: 'Viaje disponible' 
     };
 
-    await this.viajeService.guardarViaje(datos); // Guardar el viaje en el almacenamiento
+    await this.viajeService.guardarViaje(datos); 
     console.log('Datos guardados correctamente.');
+
+    
+    await this.presentToast('Viaje creado correctamente'); 
+    setTimeout(() => {
+        this.router.navigate(['/viajes']);
+    }, 1000);
   }
 }

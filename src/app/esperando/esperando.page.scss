@@ -1,0 +1,157 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.place-picker-container {
+  padding: 20px;
+}
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 150px;
+  margin: 20px auto;
+}
+
+.welcome-text {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: #9473B5;
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.location-inputs {
+  margin: 20px 0;
+}
+
+.ion-item {
+  --background: #f4f0f0;
+  margin-top: 12px;
+  border-radius: 50px;
+}
+
+ion-input {
+  --background: transparent;
+  --border-color: #9473B5;
+  --color: #181211;
+}
+
+ion-button {
+  border-radius: 50px;
+}
+
+ion-button[color="primary"] {
+  --background: #9473B5;
+  --color: white;
+  --border-color: #824dcc;
+  --hover-background: #5A2A9B;
+  --active-background: #6A4F9A;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.footer a {
+  color: #9473B5;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.header-image {
+  width: 40%;
+  height: auto;
+}
+
+.header-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+ion-item {
+  --background: #f4f0f0;
+  margin-top: 12px;
+  border-radius: 50px;
+}
+
+.custom-button {
+  --background: #9473B5;
+  --color: white;
+  --border-color: #824dcc;
+  --background-hover: #5A2A9B;
+  --background-activated: #6A4F9A;
+  --background-focused: #6A4F9A;
+
+  &.ion-color-primary {
+    --ion-color-primary: #9473B5;
+    --ion-color-primary-rgb: 148,115,181;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #8265a0;
+    --ion-color-primary-tint: #9f81bc;
+  }
+
+  &.button-solid {
+    --background-activated: #6A4F9A;
+    --background-focused: #6A4F9A;
+    --background-hover: #5A2A9B;
+    --color-activated: white;
+    --color-focused: white;
+  }
+
+  // Estilo de ios
+  .ios & {
+    --background: #9473B5;
+    --background-activated: #6A4F9A;
+    --background-focused: #6A4F9A;
+    --background-hover: #5A2A9B;
+    --color-activated: white;
+    --color-focused: white;
+  }
+}
+#map {
+    height: calc(100% - 100px); /* Ajusta la altura del mapa para dejar espacio para el GIF y el botón */
+    position: relative;
+  }
+  
+  .button-container {
+    position: absolute; /* Posiciona el contenedor del botón de manera absoluta */
+    bottom: 0; /* Alinea al fondo */
+    left: 0;
+    right: 0;
+    padding: 15px; /* Espaciado alrededor del botón */
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    text-align: center; /* Centra el contenido */
+  }
+  
+.map-gradient {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.overlay-message {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10; /* Asegúrate de que este valor sea mayor que el del mapa */
+  color: #000000; /* Cambia el color del texto al morado */
+  font-weight: bold; /* Hace que el texto sea negrita */
+}

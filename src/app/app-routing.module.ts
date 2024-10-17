@@ -33,10 +33,18 @@ const routes: Routes = [
   },
   {
     path: 'conductor',
-    loadChildren: () => import('./conductor/conductor.module').then( m => m.ConductorPageModule)
-  },{
+    loadChildren: () => import('./conductor/conductor.module').then( m => m.ConductorPageModule),
+    canActivate: [authGuard]
+  },
+  {
     path: 'viajes',
-    loadChildren: () => import('./viajes/viajes.module').then( m => m.ViajesPageModule)
+    loadChildren: () => import('./viajes/viajes.module').then( m => m.ViajesPageModule),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'esperando',
+    loadChildren: () => import('./esperando/esperando.module').then( m => m.EsperandoPageModule),
+    canActivate: [authGuard]
   },
   {
     path: '**',
@@ -47,6 +55,7 @@ const routes: Routes = [
     path: 'error',
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   },
+
   
   
 ];

@@ -1,47 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button fill="clear" slot="start" style="color: #6A4F9A">
+    </ion-back-button>
+    <ion-title>Viajes</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>tarifas</ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="openMenu()" fill="clear">
-          <ion-icon name="menu"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  
 
-  <ion-menu side="end" menuId="first" contentId="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menú</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      
 
-    </ion-content>
-    <ion-button href="/viajes">Viajes</ion-button>
-      <ion-button (click)="pass()">Admin</ion-button>
-      <ion-button (click)="logout()">Logout</ion-button>
-      
-  </ion-menu>
 
   <ion-list *ngIf="datosViaje.length > 0; else noData" id="main-content">
-    <ion-card *ngFor="let viaje of datosViaje" (click)="viaje.expandido = !viaje.expandido">
+    <ion-card *ngFor="let viaje of datosViaje" (click)="viaje.expandido = !viaje.expandido" class="viaje-card">
       <ion-card-header>
-        <ion-card-subtitle>De: {{ viaje.comunaOrigen }} a: {{ viaje.comunaDestino }}</ion-card-subtitle>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+ 
+            <ion-col size="3" class="image-col">
+              <img src="/assets/img/1.gif" alt="Travel Image" class="viaje-image"/>
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-card-subtitle>{{ viaje.comunaOrigen }} → {{ viaje.comunaDestino }}</ion-card-subtitle>
+              <ion-text >Viaje disponible</ion-text> 
+            </ion-col>
+
+
+            <ion-col size="3" class="ion-text-right">
+              <ion-text class="price">{{ viaje.valorKilometro }} $</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-header>
 
-      <ion-card-content>
-        <p>Valor por Kilómetro: {{ viaje.valorKilometro }}</p>
-        
-      </ion-card-content>
       <ion-card-content *ngIf="viaje.expandido">
-        <p>Detalles adicionales del viaje... {{ viaje.Detalles }}</p>
-        <ion-button *ngIf="viaje.expandido" (click)="contratar(viaje)">Contratar</ion-button>
+        <p *ngIf="viaje.detalles && viaje.detalles.length > 0; else noDetails">{{ viaje.detalles }}</p>
+        <ng-template #noDetails>
+          <p>No hay detalles disponibles.</p>
+        </ng-template>
+        <ion-button expand="block" (click)="contratar(viaje)" class="solicitar-btn">Solicitar</ion-button>
       </ion-card-content>
     </ion-card>
   </ion-list>
+
   <ng-template #noData>
     <p>No hay datos disponibles.</p>
   </ng-template>

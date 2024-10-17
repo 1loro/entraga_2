@@ -70,7 +70,10 @@ export class PerfilPage implements OnInit, AfterViewInit {
       this.mostrarAlerta('Por favor, ingrese su destino');
     } else {
       this.mostrarToast();
-     this.animarLogo();
+      this.animarLogo();
+      setTimeout(() => {
+        this.router.navigate(['/viajes']);
+      }, 2000);
     }
   }
 

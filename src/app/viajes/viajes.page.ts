@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ViajeService } from '../Servicios/viaje.service'; // Asegúrate de que la ruta sea correcta
+import { ViajeService } from '../Servicios/viaje.service'; 
 import { ToastController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
-import { AuthService } from '../Servicios/auth.service'; // Asegúrate de que la ruta sea correcta
-import { Router } from '@angular/router'; // Asegúrate de importar Router
+import { AuthService } from '../Servicios/auth.service'; 
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-viajes',
@@ -17,10 +17,9 @@ export class ViajesPage implements OnInit {
   comunaDestino: string = '';
   valorKilometro: number = 0;
   Detalles: string = '';
-  auth: any; // Asegúrate de que el tipo sea correcto según tu implementación
-
+  auth: any; 
   constructor(private viajeService: ViajeService, private toastController: ToastController, private alertController: AlertController, private authService: AuthService, private router: Router) {
-    this.auth = authService; // Inicializar la propiedad auth
+    this.auth = authService; 
   }
 
   ngOnInit() {
@@ -31,11 +30,12 @@ export class ViajesPage implements OnInit {
     this.datosViaje = await this.viajeService.obtenerViajes();
     if (this.datosViaje.length > 0) {
       const viaje = this.datosViaje[0];
+      console.log(viaje); 
       this.nombreConductor = viaje.nombreConductor;
       this.comunaOrigen = viaje.comunaOrigen;
       this.comunaDestino = viaje.comunaDestino;
       this.valorKilometro = viaje.valorKilometro;
-      this.Detalles = viaje.Detalles;
+      this.Detalles = viaje.Detalles; 
     } else {
       console.log('No hay datos disponibles');
     }
@@ -50,23 +50,53 @@ export class ViajesPage implements OnInit {
       Detalles: this.Detalles
     };
     await this.viajeService.guardarViaje(nuevoViaje);
-    this.cargarDatos(); // Recargar los datos después de agregar un nuevo viaje
+    this.cargarDatos(); 
   }
 
-  verDetalles(viaje: any) {
-    // Aquí puedes implementar la lógica para mostrar los detalles del viaje
-    console.log('Detalles del viaje:', viaje);
-    // Por ejemplo, podrías abrir un modal o navegar a otra página con más detalles
-    // Si usas un modal, necesitarías importar y configurar el modal en tu módulo
+
+
+  async contratar(viaje: any) {
+    const mensajeConfirmacion = `¿Te gustaría contratar este viaje por $${viaje.valorKilometro} de tarifa?`;
+    const confirmacion = await this.mostrarAlertaConfirmacion(mensajeConfirmacion);
+
+    if (confirmacion) {
+      const mensaje = `Viaje contratado por: $${viaje.valorKilometro}. Desde: ${viaje.comunaOrigen} - Hasta ${viaje.comunaDestino}`;
+      this.mostrarToast(mensaje);
+
+      setTimeout(() => {
+        this.router.navigate(['/esperando']);
+      }, 2000);
+    }
   }
 
-  contratar(viaje: any) {
+  async mostrarAlertaConfirmacion(mensaje: string): Promise<boolean> {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',
+      message: mensaje,
+      backdropDismiss: false, 
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            return false; 
+          }
+        }, {
+          text: 'Aceptar',
+          handler: () => {
+            return true; 
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+    const { role } = await alert.onDidDismiss();
+    return role !== 'cancel'; 
+  }
+
   
-    const mensaje = `Viaje contratado por: $ ${viaje.valorKilometro}. Desde: ${viaje.comunaOrigen} - Hasta${viaje.comunaDestino}`;
-    this.mostrarToast(mensaje);
-  }
-
-  // Método para mostrar el toast
   async mostrarToast(mensaje: string) {
     const toast = await this.toastController.create({
       message: mensaje,
@@ -75,15 +105,7 @@ export class ViajesPage implements OnInit {
     });
     toast.present();
   }
-  openMenu() {
-    const menu = document.querySelector('ion-menu');
-    if (menu) {
-      menu.open(); // Abre el menú
-      console.log('Menú abierto');
-    } else {
-      console.error('no se encontró el menú');
-    }
-  }
+
   logout() {
     this.auth.logout(); 
     this.router.navigate(['/home']); 

@@ -30,6 +30,6 @@ export class ApiService {
     return axios.delete(`${this.API_URL}${id}/`);
   }
 
-  // {{ edit_1 }} Cambiar 'function' a 'crearUsuario' como método de la clase
+  
   
 }

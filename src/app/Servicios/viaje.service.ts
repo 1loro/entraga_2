@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
-  providedIn: 'root' // Asegúrate de que esté aquí
+  providedIn: 'root' 
 })
 export class ViajeService {
   constructor(private storage: Storage) {

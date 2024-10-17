@@ -4,15 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  private viajes: any[] = []; // Array para almacenar múltiples viajes
+  private datos: any[] = [
+    { nombreConductor: 'Juan Pérez', comunaOrigen: 'Comuna A', comunaDestino: 'Comuna B', valorKilometro: 1000 },
+   
+  ];
 
   constructor() {}
 
-  setData(viaje: any) {
-    this.viajes.push(viaje); // Agregar el nuevo viaje al array
-  }
-
   getData() {
-    return this.viajes; // Devolver el array de viajes
+    return this.datos;
   }
 }

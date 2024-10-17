@@ -1,35 +1,17 @@
-<ion-menu side="end" menuId="first" contentId="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menú</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-footer>
-      
-    </ion-footer>
-  </ion-content>
-  <ion-button href="/viajes">Viajes</ion-button>
-  <ion-button (click)="pass()">Admin</ion-button>
-  <ion-button (click)="logout()">Logout</ion-button>
-</ion-menu>
-
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button fill="clear" slot="start" style="color: #6A4F9A">
+    </ion-back-button>
+    <ion-title>Viajes</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content id="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>tarifas</ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="openMenu()" fill="clear">
-          <ion-icon name="menu"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  
 
   <ion-content class="ion-padding">
     <div class="home-container">
       <ion-img src="assets/img/1.gif" class="logo"></ion-img>
-      <h2 class="welcome-text">Configuración de tarifas</h2>
+      <h2 class="welcome-text">Configuración</h2>
       <br>
       
       <div class="location-inputs">
@@ -41,7 +23,7 @@
           <ion-input class="input-bordered" [(ngModel)]="comunaDestino" placeholder="Comuna destino" ></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input class="input-bordered" [(ngModel)]="valorKilometro" placeholder="Ingrese tarifa" type="number"></ion-input>
+          <ion-input class="input-bordered" [(ngModel)]="valorKilometro" placeholder="Ingrese tarifa po" type="number"></ion-input>
         </ion-item>
         <ion-item>
           <ion-input class="input-bordered" [(ngModel)]="Detalles" placeholder="Detalles"></ion-input>
