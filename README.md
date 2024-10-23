@@ -67,4 +67,12 @@ El panel de administración ofrece a los administradores las siguientes funcione
 
 ---
 
+## 📦 Dependencias
+
+Para ejecutar correctamente el proyecto, es necesario instalar las siguientes dependencias en el entorno de Ionic:
+
+```bash
+npm install @capacitor/core @capacitor/cli
+npm install @ionic-native/google-maps --legacy-peer-deps
+npm install @ionic-native/geolocation --legacy-peer-deps
 
