@@ -69,7 +69,7 @@ El panel de administración ofrece a los administradores las siguientes funcione
 
 ## 📦 Dependencias
 
-Para ejecutar correctamente el proyecto, es necesario instalar las siguientes dependencias en el entorno de Ionic:
+Para ejecutar correctamente el proyecto, estas son unas de las dependencias en el entorno de Ionic necesarias:
 
 ```bash
 npm install @capacitor/core @capacitor/cli
